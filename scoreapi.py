@@ -15,7 +15,7 @@ def score(sentence1:str, sentence2:str):
     sentences = [sentence1, sentence2]
     embeddings = model.encode(sentences)
     embeddings.shape 
-    output = cosine_similarity(embeddings[0], embeddings[1])
+    output = cosine_similarity([embeddings[0]], embeddings[1:])
     return {'The similarity score for the given two sentences is {}'.format(output)}
 
 
